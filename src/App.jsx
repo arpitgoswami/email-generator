@@ -349,7 +349,18 @@ function App() {
                   placeholder="Your generated email will appear here..."
                 ></textarea>
 
-                <div className="flex justify-end mt-4">
+                <div className="flex justify-between items-center mt-4">
+                  <div
+                    className={`text-sm rounded p-2 font-medium ${
+                      isSending || !editableEmail || !recipient
+                        ? " bg-red-400 text-gray-800"
+                        : "bg-green-400 text-gray-800"
+                    }`}
+                  >
+                    {isSending || !editableEmail || !recipient
+                      ? "Please enter recipient email address."
+                      : "All Good"}
+                  </div>
                   <div className="relative">
                     <button
                       onClick={handleSendEmail}
