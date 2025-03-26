@@ -206,7 +206,7 @@ function App() {
           </div>
 
           {/* Header with user info */}
-          <div className="flex flex-col sm:flex-row items-center justify-between mb-8 pb-6 border-b border-gray-800">
+          <div className="flex items-center justify-between mb-8 pb-6 border-b border-gray-800">
             <div className="flex items-center mb-4 sm:mb-0">
               <div className="relative">
                 <img

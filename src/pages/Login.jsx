@@ -27,7 +27,7 @@ const Login = ({ setUser }) => {
         initial={{ opacity: 0, y: -20, x: 0 }}
         animate={{ opacity: 1, y: 0, x: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full md:w-1/2 bg-gradient-to-br from-[#4747f5] to-[#3535d2] flex flex-col justify-center items-center text-white p-6 md:p-8 relative overflow-hidden min-h-[40vh] md:min-h-full"
+        className="w-full h-full md:w-1/2 bg-gradient-to-br from-[#4747f5] to-[#3535d2] flex flex-col justify-center items-center text-white p-6 md:p-8 relative overflow-hidden min-h-[40vh] md:min-h-full"
       >
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
           <div className="absolute top-10 left-10">
@@ -73,7 +73,7 @@ const Login = ({ setUser }) => {
           <h2 className="text-xl md:text-2xl font-bold mb-3 text-gray-800 text-center">
             Welcome Back!
           </h2>
-          <p className="mb-6 text-gray-600 text-center">
+          <p className="mb-6 text-gray-900 text-center">
             Sign in to continue to your account
           </p>
 
@@ -88,7 +88,7 @@ const Login = ({ setUser }) => {
             whileTap={{ scale: 0.98 }}
             onClick={handleGoogleLogin}
             disabled={isLoading}
-            className={`w-full flex items-center justify-center p-3 md:p-4 border rounded-lg hover:bg-gray-50 transition-all duration-200 ${
+            className={`w-full text-gray-900 flex items-center justify-center p-3 md:p-4 border rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-200 ${
               isLoading ? "opacity-70 cursor-not-allowed" : ""
             }`}
           >
