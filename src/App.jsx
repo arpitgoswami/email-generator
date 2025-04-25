@@ -8,7 +8,7 @@ import Landing from "./pages/Landing";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Documentation from "./pages/Documentation";
-import { LoaderCircle } from "lucide-react";
+import LoadingSpinner from "./components/LoadingSpinner";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -25,11 +25,8 @@ function App() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-screen bg-gray-50">
-        <div className="flex flex-col items-center">
-          <LoaderCircle className="w-10 h-10 text-blue-500 animate-spin" />
-          <p className="mt-4 text-gray-600">Loading your workspace...</p>
-        </div>
+      <div className="h-screen bg-gray-50">
+        <LoadingSpinner />
       </div>
     );
   }

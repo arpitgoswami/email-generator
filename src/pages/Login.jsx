@@ -101,7 +101,7 @@ const Login = ({ setUser }) => {
           </motion.button>
 
           <p className="mt-6 text-xs text-center text-gray-500">
-            By continuing, you agree to Email Skip's Terms of Service and
+            By continuing, you agree to Mail Craft's Terms of Service and
             Privacy Policy
           </p>
         </div>
@@ -112,7 +112,7 @@ const Login = ({ setUser }) => {
           transition={{ delay: 0.5 }}
           className="mt-6 text-gray-500 text-xs text-center"
         >
-          © 2025 Email Skip. All rights reserved.
+          © 2025 Mail Craft. All rights reserved.
         </motion.div>
       </motion.div>
     </div>

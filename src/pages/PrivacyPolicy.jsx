@@ -3,22 +3,24 @@ import { ArrowLeft } from "lucide-react";
 
 function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-300 py-12">
+    <div className="min-h-screen bg-gray-50 text-gray-600 py-12">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <Link
           to="/"
-          className="inline-flex items-center text-blue-400 hover:text-blue-300 mb-8"
+          className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Home
         </Link>
 
-        <h1 className="text-3xl font-bold text-white mb-8">Privacy Policy</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+          Privacy Policy
+        </h1>
 
-        <div className="prose prose-invert max-w-none">
+        <div className="prose max-w-none">
           <p>Last updated: April 25, 2025</p>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             1. Information We Collect
           </h2>
           <p>
@@ -32,7 +34,7 @@ function PrivacyPolicy() {
             <li>Usage data and analytics</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             2. How We Use Your Information
           </h2>
           <p>We use the information we collect to:</p>
@@ -43,7 +45,7 @@ function PrivacyPolicy() {
             <li>Ensure security and prevent fraud</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             3. Data Security
           </h2>
           <p>
@@ -52,7 +54,7 @@ function PrivacyPolicy() {
             100% secure.
           </p>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             4. Data Sharing
           </h2>
           <p>
@@ -65,7 +67,7 @@ function PrivacyPolicy() {
             <li>Other parties with your consent</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             5. Your Rights
           </h2>
           <p>You have the right to:</p>
@@ -76,7 +78,7 @@ function PrivacyPolicy() {
             <li>Opt-out of certain data sharing</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             6. Changes to This Policy
           </h2>
           <p>
@@ -84,7 +86,7 @@ function PrivacyPolicy() {
             you of any changes by posting the new policy on this page.
           </p>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             7. Contact Us
           </h2>
           <p>

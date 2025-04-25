@@ -6,17 +6,16 @@ import Logo from "../components/Logo";
 function Landing() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-12">
         <div className="flex flex-col items-center justify-center">
-          <Logo className="w-auto h-12 mb-8" />
-          <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
+          <Logo className="w-auto h-12 mb-12" />
+          <h1 className="text-4xl sm:text-6xl text-center font-bold text-gray-900 mb-6">
             Generate Perfect Emails with{" "}
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
               AI
             </span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-center text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
             Save time and write better emails with our AI-powered email
             generator. Perfect for professional communication.
           </p>
@@ -29,7 +28,6 @@ function Landing() {
           </Link>
         </div>
 
-        {/* Features */}
         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 transition-all duration-200 hover:shadow-md">
             <div className="bg-blue-50 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
@@ -70,8 +68,8 @@ function Landing() {
 
         {/* Additional Features */}
         <div className="mt-24">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Smart Features for Better Emails
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -150,7 +148,6 @@ function Landing() {
           </div>
         </div>
       </div>
-
       <Footer />
     </div>
   );

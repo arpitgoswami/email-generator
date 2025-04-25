@@ -3,22 +3,24 @@ import { ArrowLeft } from "lucide-react";
 
 function TermsOfService() {
   return (
-    <div className="min-h-screen bg-gray-900 text-gray-300 py-12">
+    <div className="min-h-screen bg-gray-50 text-gray-600 py-12">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <Link
           to="/"
-          className="inline-flex items-center text-blue-400 hover:text-blue-300 mb-8"
+          className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Home
         </Link>
 
-        <h1 className="text-3xl font-bold text-white mb-8">Terms of Service</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+          Terms of Service
+        </h1>
 
-        <div className="prose prose-invert max-w-none">
+        <div className="prose max-w-none">
           <p>Last updated: April 25, 2025</p>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             1. Acceptance of Terms
           </h2>
           <p>
@@ -26,7 +28,7 @@ function TermsOfService() {
             Terms of Service and all applicable laws and regulations.
           </p>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             2. Description of Service
           </h2>
           <p>
@@ -35,7 +37,7 @@ function TermsOfService() {
             service at any time.
           </p>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             3. User Accounts
           </h2>
           <p>You are responsible for:</p>
@@ -45,7 +47,7 @@ function TermsOfService() {
             <li>Notifying us of any unauthorized use</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             4. Acceptable Use
           </h2>
           <p>You agree not to:</p>
@@ -56,7 +58,7 @@ function TermsOfService() {
             <li>Resell or redistribute our service</li>
           </ul>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             5. Intellectual Property
           </h2>
           <p>
@@ -65,7 +67,7 @@ function TermsOfService() {
             property laws.
           </p>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             6. Limitation of Liability
           </h2>
           <p>
@@ -74,7 +76,7 @@ function TermsOfService() {
             inability to use the service.
           </p>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             7. Termination
           </h2>
           <p>
@@ -83,7 +85,7 @@ function TermsOfService() {
             violation of these terms.
           </p>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             8. Changes to Terms
           </h2>
           <p>
@@ -91,7 +93,7 @@ function TermsOfService() {
             service after such changes constitutes acceptance of the new terms.
           </p>
 
-          <h2 className="text-xl font-semibold text-white mt-8 mb-4">
+          <h2 className="text-xl font-semibold text-gray-900 mt-8 mb-4">
             9. Contact
           </h2>
           <p>

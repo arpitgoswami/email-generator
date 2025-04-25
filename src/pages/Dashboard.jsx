@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { auth, signOut } from "../firebase";
 import { generateEmail, emailTones } from "../generateEmail";
 import emailjs from "emailjs-com";
+import toast, { Toaster } from "react-hot-toast";
 import {
   SendHorizonal,
   Sparkles,
@@ -102,12 +103,10 @@ function Dashboard({ user }) {
 
   const handleSendEmail = async () => {
     if (!recipient || !editableEmail) {
-      document.getElementById("alert-message").innerText =
-        "Please enter recipient and email content";
-      document.getElementById("alert").classList.remove("hidden");
-      setTimeout(() => {
-        document.getElementById("alert").classList.add("hidden");
-      }, 3000);
+      toast.error("Please enter recipient and email content", {
+        duration: 3000,
+        position: "top-right",
+      });
       return;
     }
 
@@ -126,30 +125,17 @@ function Dashboard({ user }) {
         "ur88oOqx_sj8S_wsv"
       );
 
-      document.getElementById("alert-message").innerText =
-        "Email sent successfully!";
-      document
-        .getElementById("alert")
-        .classList.remove("hidden", "bg-red-100", "border-red-400");
-      document
-        .getElementById("alert")
-        .classList.add("bg-green-100", "border-green-400");
-      setTimeout(() => {
-        document.getElementById("alert").classList.add("hidden");
-      }, 3000);
+      toast.success("Email sent successfully!", {
+        duration: 3000,
+        position: "top-right",
+        icon: "🚀",
+      });
     } catch (error) {
       console.error("Email send error:", error);
-      document.getElementById("alert-message").innerText =
-        "Failed to send email. Please try again.";
-      document
-        .getElementById("alert")
-        .classList.remove("hidden", "bg-green-100", "border-green-400");
-      document
-        .getElementById("alert")
-        .classList.add("bg-red-100", "border-red-400");
-      setTimeout(() => {
-        document.getElementById("alert").classList.add("hidden");
-      }, 3000);
+      toast.error("Failed to send email. Please try again.", {
+        duration: 3000,
+        position: "top-right",
+      });
     } finally {
       setIsSending(false);
     }
@@ -157,16 +143,9 @@ function Dashboard({ user }) {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Toaster />
       <Header user={user} onLogout={handleLogout} />
-      <main className="max-w-4xl mx-auto py-8 px-4 sm:px-6">
-        {/* Alert */}
-        <div
-          id="alert"
-          className="fixed top-4 right-4 left-4 sm:left-auto sm:w-80 p-4 rounded-lg border shadow-lg z-50 hidden transition-all duration-300"
-        >
-          <p id="alert-message" className="text-sm font-medium"></p>
-        </div>
-
+      <main className="max-w-4xl mx-auto pt-16 pb-4 px-4 sm:px-6">
         {/* Quick action buttons */}
         <div className="mb-8">
           <h2 className="text-base font-semibold text-gray-900 mb-4">
@@ -321,7 +300,7 @@ function Dashboard({ user }) {
                 placeholder="Your generated email will appear here..."
               ></textarea>
 
-              <div className="flex justify-between items-center">
+              <div className="flex-col space-y-8 md:space-y-0 flex md:flex-row md:items-center justify-between">
                 <div
                   className={`px-4 py-2 rounded-lg text-sm font-medium ${
                     isSending || !editableEmail || !recipient
@@ -339,7 +318,7 @@ function Dashboard({ user }) {
                     onMouseEnter={showButtonTooltip}
                     onFocus={showButtonTooltip}
                     disabled={isSending || !editableEmail || !recipient}
-                    className={`flex items-center px-5 py-2.5 rounded-lg bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium transition-all duration-200 ${
+                    className={`flex items-center w-full md:w-auto px-5 py-2.5 justify-center rounded-lg bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium transition-all duration-200 ${
                       isSending || !editableEmail || !recipient
                         ? "opacity-50 cursor-not-allowed"
                         : "transform hover:translate-y-[-1px] hover:shadow-lg"
@@ -368,10 +347,8 @@ function Dashboard({ user }) {
             </div>
           </div>
         )}
-
-        {/* Footer */}
-        <Footer userName={user.displayName} />
       </main>
+      <Footer />
     </div>
   );
 }
