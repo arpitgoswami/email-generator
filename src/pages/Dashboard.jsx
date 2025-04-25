@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { auth, signOut } from "../firebase";
-import { generateEmail } from "../generateEmail";
+import { generateEmail, emailTones } from "../generateEmail";
 import emailjs from "emailjs-com";
 import {
   SendHorizonal,
@@ -17,6 +17,7 @@ import Footer from "../components/Footer";
 
 function Dashboard({ user }) {
   const [emailPrompt, setEmailPrompt] = useState("");
+  const [selectedTone, setSelectedTone] = useState("professional");
   const [generatedEmail, setGeneratedEmail] = useState("");
   const [editableEmail, setEditableEmail] = useState("");
   const [recipient, setRecipient] = useState("");
@@ -35,7 +36,8 @@ function Dashboard({ user }) {
     try {
       const emailContent = await generateEmail(
         emailPrompt,
-        user.displayName || "arpitgoswami"
+        user.displayName || "arpitgoswami",
+        selectedTone
       );
       setGeneratedEmail(emailContent);
       setEditableEmail(emailContent);
@@ -72,7 +74,8 @@ function Dashboard({ user }) {
     try {
       const emailContent = await generateEmail(
         prompt,
-        user.displayName || "arpitgoswami"
+        user.displayName || "arpitgoswami",
+        selectedTone
       );
       setGeneratedEmail(emailContent);
       setEditableEmail(emailContent);
@@ -243,6 +246,39 @@ function Dashboard({ user }) {
                 placeholder="E.g., Write a follow-up email to the client about the project status..."
                 className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-sm focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all duration-200 outline-none min-h-[100px] resize-y"
               ></textarea>
+            </div>
+
+            {/* Tone selector */}
+            <div className="mb-6">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Select Email Tone
+              </label>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {emailTones.map((tone) => (
+                  <button
+                    key={tone.id}
+                    onClick={() => setSelectedTone(tone.id)}
+                    className={`p-3 rounded-lg border text-left transition-all duration-200 ${
+                      selectedTone === tone.id
+                        ? tone.id === "formal"
+                          ? "bg-blue-50 border-blue-200 text-blue-700"
+                          : tone.id === "friendly"
+                          ? "bg-green-50 border-green-200 text-green-700"
+                          : tone.id === "cheerful"
+                          ? "bg-yellow-50 border-yellow-200 text-yellow-700"
+                          : tone.id === "assertive"
+                          ? "bg-purple-50 border-purple-200 text-purple-700"
+                          : tone.id === "empathetic"
+                          ? "bg-pink-50 border-pink-200 text-pink-700"
+                          : "bg-gray-50 border-gray-200 text-gray-700"
+                        : "border-gray-200 hover:border-gray-300 text-gray-600 hover:bg-gray-50"
+                    }`}
+                  >
+                    <div className="font-medium text-sm mb-1">{tone.name}</div>
+                    <div className="text-xs opacity-75">{tone.description}</div>
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Generate button */}

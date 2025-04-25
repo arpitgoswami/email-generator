@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import { Mail, Sparkles, Clock, Shield } from "lucide-react";
 import Footer from "../components/Footer";
+import Logo from "../components/Logo";
 
 function Landing() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
-        <div className="text-center">
+        <div className="flex flex-col items-center justify-center">
+          <Logo className="w-auto h-12 mb-8" />
           <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
             Generate Perfect Emails with{" "}
             <span className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
